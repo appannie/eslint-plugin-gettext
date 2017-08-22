@@ -1,0 +1,92 @@
+{
+  "name": "eslint-plugin-gettext",
+  "version": "0.0.0",
+  "description": "Set of eslint rules for gettext API",
+  "author": "App Annie Engineering",
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "main": "index.js",
+  "keywords": [
+    "gettext",
+    "gettext-eslint",
+    "literal",
+    "eslint",
+    "eslint-plugin",
+    "i18n",
+    "internationalization",
+    "localization"
+  ],
+  "devDependencies": {
+    "codecov": "^1.0.1",
+    "coveralls": "^2.13.1",
+    "eslint": "^4.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "husky": "^0.14.3",
+    "istanbul": "~0.4.5",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.0",
+    "lint-staged": "^4.0.3",
+    "mocha": "^3.1.2",
+    "nsp": "^2.6.3",
+    "prettier": "^1.5.3"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "prepublish": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": "appannie/eslint-plugin-gettext",
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": [
+      "xo-space",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "indent": "off",
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "trailingComma": "es5",
+          "tabWidth": 4,
+          "printWidth": 90
+        }
+      ]
+    }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
