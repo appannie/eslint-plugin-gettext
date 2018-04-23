@@ -7,7 +7,7 @@ We're using this rule to lint against misuse of the [jed gettext integration](ht
 ## Installation
 
 1. Install [ESLint](https://www.github.com/eslint/eslint).
-1. Install [eslint-plugin-flowtype](https://github.com/appannie/eslint-plugin-gettext) plugin.
+1. Install [eslint-plugin-gettext](https://github.com/appannie/eslint-plugin-gettext) plugin.
 
 ```sh
 npm install eslint --save-dev
