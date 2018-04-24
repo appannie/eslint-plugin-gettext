@@ -1,14 +1,13 @@
 'use strict';
 
-const rule = require('../../../lib/rules/no-variable-string');
+const ruleNoVariableString = require('../../../lib/rules/no-variable-string');
 const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester();
-
 const invalidMessage =
     'Unexpected argument, gettext function only allows string literals as arguments.';
 
-ruleTester.run('no-variable-string', rule, {
+ruleTester.run('no-variable-string', ruleNoVariableString, {
     valid: [
         "gettext('hello')",
         "i18n.gettext('hello')",
@@ -229,6 +228,15 @@ ruleTester.run('no-variable-string', rule, {
             ],
         },
         {
+            code: "npgettext('my', 'cat', cats, 5)",
+            errors: [
+                {
+                    message: invalidMessage,
+                    type: 'Identifier',
+                },
+            ],
+        },
+        {
             code: "npgettext(homepage, 'cat', 'cats', 5)",
             errors: [
                 {
@@ -239,15 +247,6 @@ ruleTester.run('no-variable-string', rule, {
         },
         {
             code: "npgettext('homepage', cat, '%d cats', 5)",
-            errors: [
-                {
-                    message: invalidMessage,
-                    type: 'Identifier',
-                },
-            ],
-        },
-        {
-            code: "npgettext('homepage', 'cat', cats, 5)",
             errors: [
                 {
                     message: invalidMessage,
