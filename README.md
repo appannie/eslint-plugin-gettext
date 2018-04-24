@@ -23,14 +23,15 @@ npm install eslint-plugin-gettext --save-dev
 {
   "plugins": ["gettext"],
   "rules": {
-    "gettext/no-variable-string": "error"
+    "gettext/no-variable-string": "error",
+    "gettext/required-positional-markers-for-multiple-variables": "error"
   }
 }
 ```
 
 ## Rules
 
-### <code>gettext/no-variable-string</code>
+### `gettext/no-variable-string`
 
 Disallow non literal strings inside common `gettext` functions. This is a very common mistake that disallow translation system from statically collecting the translatable strings.
 
@@ -49,6 +50,20 @@ pgettext('homepage', 'hello')
 npgettext('homepage', 'cat', '%d cats', 5)
 i18n.gettext('hello') // any object can expose the gettext API
 this.gettext('hello')
+```
+
+### `gettext/required-positional-markers-for-multiple-variables`
+
+Require that all strings containing multiple variables also includes positional marker. This allows translator to reorder variables, and prevents `sprintf()` errors if someone change the order of `%s` and `%d`.
+
+```js
+// Disallows:
+gettext('There is %d more event in the %s.')
+gettext('There is %d more event in the %1$s.')
+
+// Allows:
+gettext('There is %d more event in the game.')
+ngettext('cat %1$s $2$s', '%1$d cats %2$d dogs', count)
 ```
 
 ## License
