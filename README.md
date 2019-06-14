@@ -24,7 +24,8 @@ npm install eslint-plugin-gettext --save-dev
   "plugins": ["gettext"],
   "rules": {
     "gettext/no-variable-string": "error",
-    "gettext/required-positional-markers-for-multiple-variables": "error"
+    "gettext/required-positional-markers-for-multiple-variables": "error",
+    "gettext/no-single-quotes": "error"
   }
 }
 ```
