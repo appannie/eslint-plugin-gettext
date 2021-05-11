@@ -24,7 +24,8 @@ npm install eslint-plugin-gettext --save-dev
   "plugins": ["gettext"],
   "rules": {
     "gettext/no-variable-string": "error",
-    "gettext/required-positional-markers-for-multiple-variables": "error"
+    "gettext/required-positional-markers-for-multiple-variables": "error",
+    "gettext/no-single-quotes": "error"
   }
 }
 ```
@@ -64,6 +65,18 @@ gettext('There is %d more event in the %1$s.')
 // Allows:
 gettext('There is %d more event in the game.')
 ngettext('cat %1$s $2$s', '%1$d cats %2$d dogs', count)
+```
+
+### `gettext/no-single-quotes`
+
+Require that literal strings do not contain a regular single quote (`'`), which implies a preference for the closing single quote (`’`) instead. This only applies to literal strings and would build on the above rules to enforce literal strings.
+
+``` js
+// Disallows:
+gettext('The cat\\'s paw is dirty.')
+
+// Allows:
+gettext('The cat’s paw is dirty.')
 ```
 
 ## License
