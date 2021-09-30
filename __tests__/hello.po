@@ -1,0 +1,11 @@
+msgid "hello"
+msgid_plural "hellos"
+msgstr[0] ""
+msgstr[1] ""
+
+
+msgctxt "homepage"
+msgid "hi"
+msgid_plural "his"
+msgstr[0] ""
+msgstr[1] ""

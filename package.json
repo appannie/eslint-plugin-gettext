@@ -21,6 +21,9 @@
     "internationalization",
     "localization"
   ],
+  "dependencies": {
+    "gettext-parser": "^4.0.4"
+  },
   "devDependencies": {
     "coveralls": "^3.0.4",
     "eslint": "^5.16.0",
