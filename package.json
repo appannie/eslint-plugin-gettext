@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-gettext",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Set of eslint rules for gettext API",
   "author": "App Annie Engineering",
   "files": [
