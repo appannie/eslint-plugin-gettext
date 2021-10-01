@@ -26,15 +26,15 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.4",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^5.0.0",
-    "eslint-config-xo-space": "^0.21.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^2.4.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-xo-space": "^0.29.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
     "istanbul": "~0.4.5",
-    "jest": "^24.8.0",
-    "lint-staged": "^8.2.1",
-    "prettier": "^1.18.2"
+    "jest": "^27.2.4",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1"
   },
   "scripts": {
     "test": "jest --coverage",
@@ -46,6 +46,11 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": "appannie/eslint-plugin-gettext",
   "license": "MIT",

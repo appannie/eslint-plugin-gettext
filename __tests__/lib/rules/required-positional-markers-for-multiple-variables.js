@@ -1,7 +1,7 @@
 'use strict';
 
 const ruleRequiredPositionalMarkersForMultipleVariables = require('../../../lib/rules/required-positional-markers-for-multiple-variables');
-const RuleTester = require('eslint').RuleTester;
+const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester();
 

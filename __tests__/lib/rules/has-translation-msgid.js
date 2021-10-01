@@ -1,7 +1,7 @@
 'use strict';
 
 const ruleNoMissingMsgId = require('../../../lib/rules/has-translation-msgid');
-const RuleTester = require('eslint').RuleTester;
+const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester();
 const invalidMessage = 'String literal not in .po file.';

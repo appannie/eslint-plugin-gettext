@@ -1,7 +1,7 @@
 'use strict';
 
 const ruleNoVariableString = require('../../../lib/rules/no-variable-string');
-const RuleTester = require('eslint').RuleTester;
+const { RuleTester } = require('eslint');
 
 const ruleTester = new RuleTester();
 const invalidMessage =
